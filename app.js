@@ -36,22 +36,30 @@ var f = function () {
 
 // console.log("names",typeof names);
 
-// var names = [
-//     {
-//         name:"abderrahim",
-//         color:"red"
-//     },
-//     {
-//         name:"hassna",
-//         color:"yellow"
-//     },
-//     {
-//         name:"ali",
-//         color:"green"
-//     },
+var names = [
+    {
+        name:"abderrahim",
+        color:"red",
+        age : 50
+    },
+    {
+        name:"hassna",
+        color:"yellow",
+        age : 50
+    },
+    {
+        name:"ali",
+        color:"green",
+        age : 50
+    },
 
-// ];
+];
 
+for (let i = 0; i < names.length; i++) {
+    const x = names[i];
+    console.log(x);
+    
+}
 
 // var number1 = 5;
 // var number2 = "6";

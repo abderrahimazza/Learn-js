@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    background-color: pink;
+    margin-bottom: 50px;
+}
+
+header ul{
+    list-style-type: none;
+    display: flex;
+}
+header ul li{
+    margin: 0 10px;
+}
+section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    grid-gap: 20px;
+}
+.image{
+    width: 50%;
+    height: 200px;
+    background-color: pink;
+}
+.box{
+    width: 33%;
+    height: 200px;
+    background-color: pink;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: pink;
+    grid-gap: 20px;
+    height: 200px;
+    
+}
+footer ul{
+    list-style-type: none;
+    margin: 0 50px;
+    background-color: #ccc;
+    width: 30%;
+
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 425px) {
+    .container {
+        width: 100%;
+    }
+    .block1,.block2,.block3{
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+    }
+    .box {
+        width: 100%;
+    }
+    footer{
+        flex-direction: column;
+        height: max-content;
+    }
+    footer ul {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    
+    
+}
+
+
+/* @media only screen and (max-width: 768px){
+    jnddf
+} */
+
+
+/* https://getbootstrap.com/docs/5.1/layout/breakpoints/#media-queries */
