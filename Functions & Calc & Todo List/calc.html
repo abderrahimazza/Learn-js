@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+<style>
+
+*{
+	margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+.calc{
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: max-content;
+    margin: 50px auto;
+}
+.bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    grid-gap: 10px;
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.btns{
+    margin: 10px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+button{
+    padding : 5px 10px;
+    font-size: 25px;
+}
+#msg{
+    color: red;
+    margin-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+    
+<div class="calc">
+
+    <div class="bar">
+        <label for="first">First number :</label>
+        <input id='first' type="text" />
+    </div>
+
+    <div class="bar">
+        <label for="last">Last number :</label>
+        <input id='last' type="text" />
+    </div>
+
+    <div class="btns">
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+        <button id="multiply">*</button>
+        <button id="divide">/</button>
+    </div>
+
+    <p id="msg"></p>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+
+let first = document.getElementById('first');
+let last = document.getElementById('last');
+
+let plus = document.getElementById('plus');
+let minus = document.getElementById('minus');
+let multiply = document.getElementById('multiply');
+let divide = document.getElementById('divide');
+
+let msg = document.getElementById('msg');
+let result = document.getElementById('result');
+
+
+plus.addEventListener("click",function () {
+    msg.innerHTML = ""
+    result.innerHTML = Number(first.value) + Number(last.value);
+});
+
+minus.addEventListener("click",function () {
+    msg.innerHTML = ""
+    result.innerHTML = Number(first.value) - Number(last.value);
+});
+
+multiply.addEventListener("click",function () {
+    msg.innerHTML = ""
+    result.innerHTML = Number(first.value) * Number(last.value);
+});
+
+divide.addEventListener("click",function () {
+    if (last.value > 0) {
+        msg.innerHTML = ""
+        result.innerHTML = Number(first.value) / Number(last.value);
+    }else{
+        msg.innerHTML = "Enter correct number!!"
+    }
+});
+
+</script>
+</body>
+</html>

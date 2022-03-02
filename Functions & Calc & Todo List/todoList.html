@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+<style>
+
+*{
+	margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+.todo-list{
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.btns{
+    margin: 10px 0 20px;
+}
+button{
+    padding : 5px;
+}
+p{
+    color: red;
+    margin-bottom: 10px;
+}
+li{
+	padding : 10px;	
+    border : 1px solid black;
+    width : 100%;
+    list-style-type: none;
+    border-radius: 10px;
+}
+li::first-letter{
+    text-transform: uppercase;
+}
+.todo-list{
+    width: 300px;
+    margin: 50px auto;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="todo-list">
+
+    <div class="bar">
+        <label for="first">First name :</label>
+        <input id='first' type="text" />
+    </div>
+
+    <div class="bar">
+        <label for="last">Last name :</label>
+        <input id='last' type="text" />
+    </div>
+
+    <div class="btns">
+        <button id="clear">Clear</button>
+        <button id="add">Add</button>
+    </div>
+
+    <p id="msg"></p>
+
+    <ul id='list'>
+
+    </ul>
+
+</div>
+
+<script>
+
+let first = document.getElementById('first');
+let last = document.getElementById('last');
+let msg = document.getElementById('msg');
+let clear = document.getElementById('clear');
+let add = document.getElementById('add');
+let list = document.getElementById('list');
+
+
+add.addEventListener("click",function () {
+    if(first.value.length > 2 && last.value.length > 2){
+        msg.innerHTML = '';
+        list.innerHTML +=`<li>${first.value} ${last.value}</li>`;
+        first.value = '';
+        last.value = '';
+    }else{
+        msg.innerText = "Your name must be more than 3 characters"
+    }
+});
+
+clear.addEventListener('click',function () {
+    list.innerHTML = "Your list is empty";
+})
+
+</script>
+</body>
+</html>
