@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            grid-gap: 10px;
+            width: 50%;
+            padding: 15px;
+            border: 2px dashed black;
+            margin: 50px auto;
+        }
+        input{
+            padding: 10px 15px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            grid-gap: 10px;
+        }
+        li{
+            padding: 10px 10px;
+            border: 1px solid #000;
+
+        }
+        .btns{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        button{
+            padding: 10px 15px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Todo list with Array</h1>
+
+    <div class="list">
+        <label for="">First name</label>
+        <input id="firstName" type="text">
+
+        <label for="">Last name</label>
+        <input id="lastName" type="text">
+
+        <div class="btns">
+            <button id="clear">Clear All</button>
+            <button id="addUser">Add</button>
+        </div>
+
+        <ul id="myList">
+            
+        </ul>
+    </div>
+
+
+    <script>
+
+        var users = [];
+
+        var myList = document.getElementById("myList")
+        var firstName = document.getElementById("firstName")
+        var lastName = document.getElementById("lastName")
+        var addUser = document.getElementById("addUser")
+        var clear = document.getElementById("clear")
+        
+        function getUsers() {
+
+            myList.innerHTML = "";
+            users.forEach((user)=>{
+                myList.innerHTML += `<li> ${user} </li>`
+            })
+            
+        }
+
+        getUsers()
+
+        addUser.addEventListener("click",function() {
+
+            if (lastName.value != "" && firstName.value != "") {
+                
+                users.push(firstName.value + " " + lastName.value)
+                getUsers()
+
+                firstName.value = ""
+                lastName.value = ""
+
+            }
+
+        })
+
+        clear.addEventListener('click',function () {
+
+            users = []
+            getUsers()
+
+            firstName.value = ""
+            lastName.value = ""
+
+        })
+
+    </script>
+</body>
+</html>
