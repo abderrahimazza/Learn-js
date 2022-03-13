@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .styleMe{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            color: blue;
+            border: 5px solid gray;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- <div id="demo"><p>hello Dom</p></div>
+    <div class="demo2"><p>hello by class</p></div> -->
+
+    <div class="child">
+
+        <h1>hello child</h1>
+        
+    </div>
+
+    <button id="btn" >change color</button>
+
+
+    
+    <script>
+
+        // var demo = document.getElementById("demo")
+        // var demo2 = document.querySelector(".demo2")
+
+        // var item = document.querySelector(".child")
+
+        // item.classList.remove("bg","child")
+
+        // item.classList.replace("bg","bgColor")
+
+        // console.log(
+            
+        //     item.getAttributeNames()
+
+        // )
+
+        // item.setAttribute("id","show")
+        // item.setAttribute("name","ali")
+
+        
+        // console.log(
+        //     item.innerHTML
+        // );
+
+        // console.log(
+        //     item.textContent
+        // );
+
+        // console.log(
+        //     item.innerText
+        // );
+
+
+        // item.setAttribute("id","testId100")
+
+
+        // item.classList.add("color")
+
+        // item.classList.remove("child")
+
+        // item.classList.replace("bg","color")
+
+
+        
+        var child = document.querySelector(".child")
+        var btn = document.getElementById("btn")
+
+
+        btn.addEventListener("click",function() {
+            child.classList.toggle("styleMe")
+        })
+
+
+
+    </script>
+</body>
+</html>
