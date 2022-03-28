@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timing</title>
+</head>
+<body>
+
+  <button id="btn1">clear Interval</button>
+  <br>
+  <br>
+  <button id="btn2">clear Timeout</button>
+
+
+    <script>
+
+      
+      var score = 0
+
+      var time1 = setInterval(() => {
+        console.log(score);
+        score++
+      }, 1000);
+
+      var btn1 = document.getElementById("btn1")
+
+      btn1.addEventListener("click",function () {
+        clearInterval(time1)
+      });
+
+      ///////////
+
+
+      var time2 = setTimeout(() => {
+        console.log("Hello Azza");
+      }, 3000);
+
+      var btn2 = document.getElementById("btn2")
+
+      btn2.addEventListener("click",function () {
+        clearTimeout(time2)
+      });
+
+
+    </script>
+</body>
+</html>
